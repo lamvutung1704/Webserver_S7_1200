@@ -1,0 +1,230 @@
+/*Nút nhấn sửa*/
+#btt_Edit {
+    border: none; 
+    background-color: rgb(255, 0, 0); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 250px; top: 400px;
+}
+/*Nút nhấn lưu*/
+#btt_Save {
+    border: none; 
+    background-color: rgb(2, 2, 2); 
+    color: rgb(255, 255, 255);   
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; 
+    width: 80px; height: 40px; 
+    left: 250px;top: 400px;
+}
+
+/*Slide bar chính*/
+#slidebar {
+    position: absolute; 
+    left: 5px; top: 11px; 
+    width: 198px; height: 900px;
+    background-color: rgb(40, 58, 107); 
+}
+/*Nút Màn chính*/
+#btt_Screen_Main {
+    border: none; 
+    background-color: rgb(233, 15, 149);  
+    color: rgb(255, 255, 255);  
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: normal;
+    cursor: pointer;
+    position: absolute; 
+    width: 150px; height: 40px; 
+    left: 22px; top: 20px;
+}
+/*Nút Màn 1*/
+#btt_Screen_1 {
+    border: none; 
+    background-color: rgb(240, 236, 11);
+    border: none; color: rgb(0, 0, 0);  
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: normal;
+    cursor: pointer;
+    position: absolute; 
+    width: 150px; height: 40px; 
+    left: 22px; top: 70px;
+}
+/*Nút Màn 2*/
+#btt_Screen_2 {
+    border: none; 
+    background-color: rgb(11, 167, 240); 
+    border: none; color: rgb(255, 255, 255);  
+    text-align: center; 
+    display: inline-block;
+    font-size: 13px; 
+    font-weight: normal;
+    cursor: pointer;
+    position: absolute; 
+    width: 150px; height: 40px; 
+    left: 22px; top: 120px;
+}
+
+/*Màn hình chính*/
+#Screen_Main {
+    background-color: rgb(240, 159, 159);
+    position: absolute; 
+    left: 215px; top: 11px; 
+    width: 1500px; height: 880px;
+    border: solid black 10px;    
+} 
+#title{
+  
+  width: 70%;
+  height: auto;  
+  margin: 0px auto;
+}
+
+#logo{
+  /*background-color: #04AA6D;*/
+  width: 15%;
+  height: auto;
+  float: left;
+}
+/*Màn hình 1*/
+/*Màn hình 2*/
+#Screen_2 {
+    position: absolute; 
+    left: 215px; top: 11px; 
+    width: 1600px; height: 1000px;
+    background-color: rgb(255, 255, 255); 
+}
+/* User Manager*/
+
+/*Div login*/
+#login_welcome {
+    position: fixed; 
+    left: 700px; top: 400px;
+    font-size: 19px;
+    color: rgb(4, 33, 44); 
+}
+/*Font*/
+#modal {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Full-width input fields */
+#inputuser[type=text], #inputpass[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+} 
+/* Set a style for all buttons */
+#bttlogin1, #bttcancle {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  #bttcancle {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }  
+/* Center the image and position the close button */
+#img_container {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+ 
+#img_avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+ 
+#log_container, #login_container {
+  padding: 16px;
+}
+ 
+#psw {
+  float: right;
+  padding-top: 16px;
+}
+ 
+/* The Modal (background) */
+#id01 {
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.85); /* Black w/ opacity */
+  padding-top: 60px;
+} 
+/* Modal Content/Box */
+#modal-content1 {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+  height: 610px; /* Could be more or less, depending on screen size */
+} 
+/* The Close Button (x) */
+#closebtt {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+} 
+#closebtt:hover,
+#closebtt:focus {
+  color: red;
+  cursor: pointer;
+} 
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+} 
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+} 
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}

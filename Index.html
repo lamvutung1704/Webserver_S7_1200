@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="FB/jquery-3.2.1.min.js"></script>               
+        <!-- ////////////// GỌI CÁC CSS //////////////  -->
+        <link rel="stylesheet" href="CSS/button.css">
+        <link rel="stylesheet" href="CSS/main_screen.css">
+        <link rel="stylesheet" href="CSS/Auto.css">
+        <link rel="stylesheet" href="CSS/manual.css">
+        <title>DATN Webserver</title>
+        <!-- ////////////// CHƯƠNG TRÌNH CON //////////////  -->
+        <script src="FC/Run.js"></script>
+        <script src="FC/Login.js"></script>
+    </head>    
+    <style>
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color: black;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    <!-- Phần thân của website -->
+    <body>
+         <!-- ////////////// Code cho slidebar////////////// -->
+         <div id = "slidebar">
+            <!--Nút chọn màn hình chính-->
+            <button class="button" id="btt_Screen_Main" onclick=" 
+                fn_ScreenChange('Screen_Main','Screen_1','Screen_2');
+            ">MÀN HÌNH CHÍNH</button>
+            <!--Nút chọn màn hình 1-->
+            <button class="button" id="btt_Screen_1" onclick=" 
+                fn_ScreenChange('Screen_1','Screen_Main','Screen_2');
+                
+            ">Chế độ Auto</button>
+            <!--Nút chọn màn hình 2-->
+            <button class="button" id="btt_Screen_2" onclick=" 
+                fn_ScreenChange('Screen_2','Screen_Main','Screen_1');
+            "> Chế độ Manual</button>                   
+        </div>
+
+        <div id="Screen_Main">
+            <div id="logo">
+                <img style=" width: 80%; height: auto;" src="images/375px-Logo_Đại_học_Bách_Khoa_Hà_Nội.svg.png" alt="logo_hust">
+            </div>
+
+            <div id="title">
+                <h1>ĐẠI HỌC BÁCH KHOA HÀ NỘI</h1>
+                <h1>TRƯỜNG CƠ KHÍ</h1>
+                <h1>KHOA CƠ ĐIỆN TỬ</h1>
+                <h1>ĐỒ ÁN TỐT NGHIỆP KĨ SƯ</h1>
+                <h1>ĐIỀU KHIỂN VÀ GIÁM SÁT MÔ HÌNH HỆ THỐNG PHÂN LOẠI SẢN PHẨM SỬ DỤNG BỘ ĐIỀU KHIỂN PLC S7-1200 </h1>
+                <br>
+                <br>
+                <p style="font-size: 40px;">
+                    Giảng viên hướng dẫn: TS. Dương Văn Lạc <br>
+                    Sinh viên thực hiện:Vũ Tùng Lâm - 20184505 <br>
+                    lam.vt184505@sis.hust.edu.vn
+                </p>         
+            </div>
+        </div>
+        <div id="Screen_1">
+            <p>
+                 <h1 id="h1_style">AUTO MODE</h1><br>
+                <div id="display">
+                        <!--Tạo ô nhập số lượng sản phẩm pass theo ý muốn-->
+                    <br>
+                    <label for="">Nhập số lượng sản phẩm đạt: </label> <br>
+                    <input id="tbx_Sp_pass_set" disabled="disabled" type="text" name="number"/> <br>
+                    
+                    <button id="Edit"  onmousedown="Edit_Sp_pass_set()">Edit</button>
+                    <button id="Save"  onmousedown="Save_Sp_pass_set()">Save</button> <br>
+                    <br>
+                    <br>
+
+                    <!--hiển thị số lượng sản phẩm đã phân loại-->
+                    <label for="">Số sản phẩm đã phân loại</label> <br>
+                    <input id="tbx_Sp_sum" disabled="disabled" type="text" name="number" /> <br>
+                    <br>
+                    <!--hiển thị số lượng sản phẩm đạt yêu cầu-->
+                    <label for="">Số sản phẩm đạt yêu cầu</label> <br>
+                    <input id="tbx_Sp_pass" disabled="disabled" type="text" name="number_pass" /><br>
+                    <br>
+                    <!--hiển thị số sản phẩm lỗi-->
+                    <label for="">Số sản phẩm lỗi</label><br>
+                    <input id="tbx_Sp_fail" disabled="disabled" type="text" name="number_fail" /><br>
+                </div>              
+                <!-- các nút ấn -->
+                <div id="nut_an">
+                    <button id="ON" onmousedown="setTag('ON',1)">ON</button>
+                    <button id="OFF" onmousedown="setTag('OFF',1)">OFF</button>
+                    <br>
+                    <button id="Start_but" onmousedown="setTag('Start_but',1)"> START</button>
+                    <button id="Stop_but" onmousedown="setTag('Stop_but',1)">STOP</button>    <br>
+                    <br>
+                    <button id="Reset_but" onmousedown="setTag('Reset_but',1)">RESET</button>
+                    <button id="Go_on_but" onmousedown="setTag('Go_on_but',1)">GO ON</button>                
+                </div>
+                <br></br>
+                <!-- đưa các symbol của hệ thống lên trên webserver-->
+                <div id="Phan_loai">
+                    <img id="Green"
+                         src="images/Symbol/Green_0.png" 
+                        >
+                    <img id="Red"
+                         src="images/Symbol/Red_0.png"   
+                        >
+                    <img id="Yellow"
+                         src="images/Symbol/Yellow_0.png"
+                        ><br>
+                    <img id="SensorIR"
+                         src="images/Symbol/sensorIR_0.png"
+                        >
+                    <img id="SensorInduc"
+                         src="images/Symbol/SensorInduc_0.png"
+                        >
+                    <img id="Actuator"
+                         src="images/Symbol/Actuator_0.png"
+                        > <br>
+                    <div id="phoi_div">
+                            <img id="sp" 
+                             src="images/Symbol/sp_0.png"   
+                            >
+                    </div>
+                    <img id="spfail"
+                         src="images/Symbol/spfail_1.png"        
+                    >
+                    <img id="Belt"
+                         src="images/Symbol/Belt_0.png"
+                    > <br>
+                    <img id="Motor"
+                         src="images/Symbol/Motor_0.png"    
+                    >                            
+                </div>                
+            </p>
+        </div>
+        
+        <div id="Screen_2">
+            <p>
+               <h1> MANUAL MODE </h1>
+            </p>
+        </div>
+        <!-- ////////////// CHƯƠNG TRÌNH ĐĂNG NHẬP HỆ THỐNG //////////////  -->        
+        <div id="div_login">
+            <div id="id01" class="Modal">
+                <form id = "modal-content1" class="animate"> 
+                <div id = "img_container">      
+                <!-- tạo dấu  x thoát đăng nhập vào trang web-->
+                    <span id = "closebtt" onclick="document.getElementById('id01').style.display='none'; 
+                                logout();" class="close" title="Close Modal">&times;    
+                    </span>        
+                    
+                <!-- ảnh avatar -->
+                    <img id = "img_avatar" alt="Avatar" class="avatar">
+                </div>
+            
+                <div id = "log_container">
+                    <label for="uname"><b>Username</b></label>
+                    <input id = "inputuser" type="text" placeholder="Enter Username" name="uname" required>
+            
+                    <label for="psw"><b>Password</b></label>
+                    <input id = "inputpass" type="password" placeholder="Enter Password" name="psw" required>
+                    
+                    <button id = "bttlogin1" type="button" onclick="login();">Login</button>
+                    <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>            
+                <div id = "login_container" class="container" style="background-color:#f1f1f1">
+                    <button id = "bttcancle" type="button" onclick="document.getElementById('id01').style.display='none'; logout();" class="cancelbtn">Cancel</button>
+                    <span id = "psw" class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+                </form>
+            </div>
+        </div>          
+    </body>
+</html>
